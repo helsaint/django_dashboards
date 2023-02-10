@@ -1,0 +1,393 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--  Fonts and icons  -->
+    <link href="{% static 'blackDB/css/nucleo-icons.css' %}" rel="stylesheet">
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!-- Black Dashboard CSS -->
+    <link href="{% static 'blackDB/css/black-dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'blackDB/css/cards-small.css' %}?{% now 'U' %}" rel="stylesheet">
+    <link href="{% static 'blackDB/css/row-column.css' %}?{% now 'U' %}" rel="stylesheet">
+    <!--CSS for Map-->
+    <link rel="stylesheet" href="{% static 'blackDB/css/jquery-jvectormap-2.0.5.css' %}" 
+        type="text/css" media="screen"/>
+  </head>
+  <body>
+<div class="wrapper ">
+  <div class="sidebar" data-color="purple" data-background-color="white">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo">
+      <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        CX
+      </a>
+
+      <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+       Creative Kunxie
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active  ">
+            <a class="nav-link" href="#">
+                <i class="tim-icons icon-chart-pie-36"></i>
+                <p>Emissions</p>
+            </a>
+        </li>
+
+        <li class="nav-item active  ">
+            <a class="nav-link" href="#">
+                <i class="tim-icons icon-chart-pie-36"></i>
+                <p>Cities</p>
+            </a>
+        </li>
+
+        <li class="nav-item active  ">
+            <a class="nav-link" href="#">
+                <i class="tim-icons icon-chart-pie-36"></i>
+                <p>Cities 2</p>
+            </a>
+        </li>
+
+         <!-- your sidebar here -->
+      </ul>
+    </div>
+  </div>
+  <!-- .........................................................................................  -->
+  <div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+
+          <a class="navbar-brand" href="">Dashboard</a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                <i class="tim-icons icon-bell-55"></i>  Notifications
+              </a>
+            </li>
+             <!-- your navbar here -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="content">
+      <div class="container-fluid">
+         <!-- your content here -->
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                  <div class="top-cards-container">
+                    <h4 id="txth4MaxPop">Max Population</h4>
+                      <p id="txtMaxPop">"Javascript Problem"</p>
+                  </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                  <div class="top-cards-container">
+                    <h4 id="txth4MaxCO2">Max CO2</h4>
+                      <p id="txtMaxCO2">"Javascript Problem"</p>
+                  </div>
+                </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="top-cards-container">
+                  <h4 id="txth4C02Capita">CO2 per Capita</h4>
+                    <p id="txtCO2Capita">"Javascript Problem"</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="top-cards-container">
+                  <h4 id="txth4CumulativeCO2">Cumulative CO2</h4>
+                    <p id="txtCumulativeCO2">"Javascript Problem"</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <div>
+                    <canvas id="popBarChart"></canvas>
+                </div>
+                <p><b>Population and CO2 emissions Chart</b></p> 
+                <p>We can see that the richer the country the more CO2 the emissions
+                  occur.
+                </p> 
+            </div>
+        </div>
+        <div class="card">
+          <div class="container">
+              <div id="mapEmissionsCapita" style="height: 400px;">
+                  <!--Map Inserted Here-->
+              </div>
+              <p><b>Choropleth Map of per capita CO2 emissions</b></p> 
+              <p>We can see that the richer the country the more CO2 the emissions
+                occur.
+              </p> 
+          </div>
+      </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <nav class="float-left">
+          <ul>
+              <li>
+                  <a href="https://www.creative-tim.com">
+                      Creative Tim
+                  </a>
+              </li>
+          </ul>
+        </nav>
+        <div class="copyright float-right">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>, made with <i class="tim-icons icon-heart-2"></i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+        </div>
+
+         <!-- your footer here -->
+      </div>
+    </footer>
+  </div>
+</div>
+<!--   Core JS Files   -->
+<script src="{% static 'blackDB/js/core/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'blackDB/js/core/popper.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'blackDB/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'blackDB/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="{% static 'blackDB/js/plugins/chartjs.min.js' %}"></script>
+<!--  Notifications Plugin    -->
+<script src="{% static 'blackDB/js/plugins/bootstrap-notify.js' %}"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{% static 'blackDB/js/black-dashboard.js' %}" type="text/javascript"></script></body>
+<!--Choropleth Map Javascript-->
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="{% static 'blackDB/js/jquery-jvectormap-2.0.5.min.js' %}"></script>
+<script src="{% static 'blackDB/js/jquery-jvectormap-world-mill.js' %}"></script>
+
+
+<!--Chart Population Goes Here-->
+<div id="chart-container" data-url="{% url 'blackdb_chart_data' %}"></div>
+<div id="max-population" data-url="{% url 'max_population' %}"></div>
+<div id="max-co2" data-url="{% url 'max_co2' %}"></div>
+<div id="max-co2-per-capita" data-url="{% url 'max_co2_per_capita' %}"></div>
+<div id="max-cumulative-co2" data-url="{% url 'max_cumulative_co2' %}"></div>
+<div id="co2-per-capita" data-url="{% url 'emissions_per_capita' %}"></div>
+<div id="map-emissions-per-capita" data-url="{% url 'emissions_per_capita' %}"></div>
+<script>
+    var result;
+    $.ajax({
+        url: $("#chart-container").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            result = JSON.parse(data);
+        }
+    })
+    const arr_keys = Object.keys(result);
+    const arr_values = Object.values(result);
+    const arr_pop = [];
+    const arr_co2 = [];
+    for(let i=0; i < arr_values.length; i++){
+      arr_pop.push(arr_values[i][0]);
+      arr_co2.push(arr_values[i][1]);
+    }
+    
+    const ctx = document.getElementById('popBarChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels : arr_keys,
+        datasets: [{
+          label: 'Population 2020',
+          yAxisID: 'Population 2020',
+          //data: [12, 19, 3, 5, 2, 3],
+          data : arr_pop,
+          borderColor: '#FEF6F5',
+          backgroundColor: '#FEF6F5',
+          borderWidth: 1
+        },
+        {
+          label: 'CO2',
+          yAxisID: 'CO2',
+          data: arr_co2,
+          borderColor: '#F83839',
+          backgroundColor: '#F83839',
+          borderWidth: 1
+        }
+      ]
+      },
+      options: {
+        locale: 'en-US',
+        scales: {
+          yAxes: [{
+            id: 'Population 2020',
+            position: 'left',
+            beginAtZero: true
+          },
+        {
+          id: 'CO2',
+          position: 'right',
+          beginAtZero: true
+        }]
+        },
+        //So that hover over will show 1000 as 1,000 etc.
+        tooltips: {
+          mode: 'label',
+          callbacks: {
+            label: function(tooltipItem, data){
+              var value = tooltipItem.yLabel;
+              return data.datasets[tooltipItem.datasetIndex].label + ": " + value.toLocaleString();
+            }
+          }
+        }
+      }
+    });
+
+    //Get max population value
+    var result;
+    $.ajax({
+        url: $("#max-population").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            result = JSON.parse(data);
+            var strReturn = "";
+            for(let i = 0; i < result.length; i++){
+              if (typeof result[i] == "number"){
+                strReturn = strReturn + result[i].toLocaleString();
+                strReturn = strReturn + "<br>";
+              }else{
+                strReturn = strReturn + result[i];
+                strReturn = strReturn + "<br>"; 
+              }     
+            }
+            document.getElementById("txtMaxPop").innerHTML = strReturn;
+        }
+    });
+
+    var result1
+    $.ajax({
+        url: $("#max-co2").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            result1 = JSON.parse(data);
+            var strReturn = "";
+            for(let i = 0; i < result1.length; i++){
+              if (typeof result1[i] == "number"){
+                strReturn = strReturn + result1[i].toLocaleString();
+                strReturn = strReturn + "<br>";
+              }else{
+                strReturn = strReturn + result1[i];
+                strReturn = strReturn + "<br>"; 
+              }     
+            }
+            document.getElementById("txtMaxCO2").innerHTML = strReturn;
+        }
+    });
+
+    var result2
+    $.ajax({
+        url: $("#max-co2-per-capita").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            result2 = JSON.parse(data);
+            var strReturn = "";
+            for(let i = 0; i < result2.length; i++){
+              if (typeof result2[i] == "number"){
+                strReturn = strReturn + result2[i].toLocaleString();
+                strReturn = strReturn + "<br>";
+              }else{
+                strReturn = strReturn + result2[i];
+                strReturn = strReturn + "<br>"; 
+              }     
+            }
+            document.getElementById("txtCO2Capita").innerHTML = strReturn;
+        }
+    });
+
+    var result3
+    $.ajax({
+        url: $("#max-cumulative-co2").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            result3 = JSON.parse(data);
+            var strReturn = "";
+            for(let i = 0; i < result3.length; i++){
+              if (typeof result2[i] == "number"){
+                strReturn = strReturn + result3[i].toLocaleString();
+                strReturn = strReturn + "<br>";
+              }else{
+                strReturn = strReturn + result3[i];
+                strReturn = strReturn + "<br>"; 
+              }     
+            }
+            document.getElementById("txtCumulativeCO2").innerHTML = strReturn;
+        }
+    });
+
+    $.ajax({
+        url: $("#map-emissions-per-capita").attr("data-url"),
+        dataType: 'json',
+        async: false,
+        success: function(data){
+            const result4 = JSON.parse(data);
+            $(function(){
+            $('#mapEmissionsCapita').vectorMap({
+                map: 'world_mill',
+                series: {
+                    regions: [{
+                        values: result4,
+                        scale: ['#F83839', '#FFA600'],
+                        normalizeFunction: 'polynomial',
+                    }]
+                },
+                onRegionTipShow: function(e, el, code){
+                    el.html(el.html() + ' (Emissions Per Capita: '
+                     + (result4[code]).toLocaleString());
+                }
+            });
+          });
+        }
+    });
+    
+  </script>
+</html> 

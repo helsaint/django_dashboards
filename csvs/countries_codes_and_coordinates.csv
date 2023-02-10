@@ -1,0 +1,257 @@
+id,index,country,Alpha_2,Alpha_3,numeric_code,latitude_average,longitude_average
+1,1,Afghanistan,AF,AFG,4,33,65
+2,2,Albania,AL,ALB,8,41,20
+3,3,Algeria,DZ,DZA,12,28,3
+4,4,American Samoa,AS,ASM,16,-14.3333,-170
+5,5,Andorra,AD,AND,20,42.5,1.6
+6,6,Angola,AO,AGO,24,-12.5,18.5
+7,7,Anguilla,AI,AIA,660,18.25,-63.1667
+8,8,Antarctica,AQ,ATA,10,-90,0
+9,9,Antigua and Barbuda,AG,ATG,28,17.05,-61.8
+10,10,Argentina,AR,ARG,32,-34,-64
+11,11,Armenia,AM,ARM,51,40,45
+12,12,Aruba,AW,ABW,533,12.5,-69.9667
+13,13,Australia,AU,AUS,36,-27,133
+14,14,Austria,AT,AUT,40,47.3333,13.3333
+15,15,Azerbaijan,AZ,AZE,31,40.5,47.5
+16,16,Bahamas,BS,BHS,44,24.25,-76
+17,17,Bahrain,BH,BHR,48,26,50.55
+18,18,Bangladesh,BD,BGD,50,24,90
+19,19,Barbados,BB,BRB,52,13.1667,-59.5333
+20,20,Belarus,BY,BLR,112,53,28
+21,21,Belgium,BE,BEL,56,50.8333,4
+22,22,Belize,BZ,BLZ,84,17.25,-88.75
+23,23,Benin,BJ,BEN,204,9.5,2.25
+24,24,Bermuda,BM,BMU,60,32.3333,-64.75
+25,25,Bhutan,BT,BTN,64,27.5,90.5
+26,26,"Bolivia, Plurinational State of",BO,BOL,68,-17,-65
+27,27,Bolivia,BO,BOL,68,-17,-65
+28,28,Bosnia and Herzegovina,BA,BIH,70,44,18
+29,29,Botswana,BW,BWA,72,-22,24
+30,30,Bouvet Island,BV,BVT,74,-54.4333,3.4
+31,31,Brazil,BR,BRA,76,-10,-55
+32,32,British Indian Ocean Territory,IO,IOT,86,-6,71.5
+33,33,Brunei Darussalam,BN,BRN,96,4.5,114.6667
+34,34,Brunei,BN,BRN,96,4.5,114.6667
+35,35,Bulgaria,BG,BGR,100,43,25
+36,36,Burkina Faso,BF,BFA,854,13,-2
+37,37,Burundi,BI,BDI,108,-3.5,30
+38,38,Cambodia,KH,KHM,116,13,105
+39,39,Cameroon,CM,CMR,120,6,12
+40,40,Canada,CA,CAN,124,60,-95
+41,41,Cape Verde,CV,CPV,132,16,-24
+42,42,Cayman Islands,KY,CYM,136,19.5,-80.5
+43,43,Central African Republic,CF,CAF,140,7,21
+44,44,Chad,TD,TCD,148,15,19
+45,45,Chile,CL,CHL,152,-30,-71
+46,46,China,CN,CHN,156,35,105
+47,47,Christmas Island,CX,CXR,162,-10.5,105.6667
+48,48,Cocos (Keeling) Islands,CC,CCK,166,-12.5,96.8333
+49,49,Colombia,CO,COL,170,4,-72
+50,50,Comoros,KM,COM,174,-12.1667,44.25
+51,51,Congo,CG,COG,178,-1,15
+52,52,"Congo, the Democratic Republic of the",CD,COD,180,0,25
+53,53,Cook Islands,CK,COK,184,-21.2333,-159.7667
+54,54,Costa Rica,CR,CRI,188,10,-84
+55,55,Côte d'Ivoire,CI,CIV,384,8,-5
+56,56,Ivory Coast,CI,CIV,384,8,-5
+57,57,Croatia,HR,HRV,191,45.1667,15.5
+58,58,Cuba,CU,CUB,192,21.5,-80
+59,59,Cyprus,CY,CYP,196,35,33
+60,60,Czech Republic,CZ,CZE,203,49.75,15.5
+61,61,Denmark,DK,DNK,208,56,10
+62,62,Djibouti,DJ,DJI,262,11.5,43
+63,63,Dominica,DM,DMA,212,15.4167,-61.3333
+64,64,Dominican Republic,DO,DOM,214,19,-70.6667
+65,65,Ecuador,EC,ECU,218,-2,-77.5
+66,66,Egypt,EG,EGY,818,27,30
+67,67,El Salvador,SV,SLV,222,13.8333,-88.9167
+68,68,Equatorial Guinea,GQ,GNQ,226,2,10
+69,69,Eritrea,ER,ERI,232,15,39
+70,70,Estonia,EE,EST,233,59,26
+71,71,Ethiopia,ET,ETH,231,8,38
+72,72,Falkland Islands (Malvinas),FK,FLK,238,-51.75,-59
+73,73,Faroe Islands,FO,FRO,234,62,-7
+74,74,Fiji,FJ,FJI,242,-18,175
+75,75,Finland,FI,FIN,246,64,26
+76,76,France,FR,FRA,250,46,2
+77,77,French Guiana,GF,GUF,254,4,-53
+78,78,French Polynesia,PF,PYF,258,-15,-140
+79,79,French Southern Territories,TF,ATF,260,-43,67
+80,80,Gabon,GA,GAB,266,-1,11.75
+81,81,Gambia,GM,GMB,270,13.4667,-16.5667
+82,82,Georgia,GE,GEO,268,42,43.5
+83,83,Germany,DE,DEU,276,51,9
+84,84,Ghana,GH,GHA,288,8,-2
+85,85,Gibraltar,GI,GIB,292,36.1833,-5.3667
+86,86,Greece,GR,GRC,300,39,22
+87,87,Greenland,GL,GRL,304,72,-40
+88,88,Grenada,GD,GRD,308,12.1167,-61.6667
+89,89,Guadeloupe,GP,GLP,312,16.25,-61.5833
+90,90,Guam,GU,GUM,316,13.4667,144.7833
+91,91,Guatemala,GT,GTM,320,15.5,-90.25
+92,92,Guernsey,GG,GGY,831,49.5,-2.56
+93,93,Guinea,GN,GIN,324,11,-10
+94,94,Guinea-Bissau,GW,GNB,624,12,-15
+95,95,Guyana,GY,GUY,328,5,-59
+96,96,Haiti,HT,HTI,332,19,-72.4167
+97,97,Heard Island and McDonald Islands,HM,HMD,334,-53.1,72.5167
+98,98,Holy See (Vatican City State),VA,VAT,336,41.9,12.45
+99,99,Honduras,HN,HND,340,15,-86.5
+100,100,Hong Kong,HK,HKG,344,22.25,114.1667
+101,101,Hungary,HU,HUN,348,47,20
+102,102,Iceland,IS,ISL,352,65,-18
+103,103,India,IN,IND,356,20,77
+104,104,Indonesia,ID,IDN,360,-5,120
+105,105,"Iran, Islamic Republic of",IR,IRN,364,32,53
+106,106,Iraq,IQ,IRQ,368,33,44
+107,107,Ireland,IE,IRL,372,53,-8
+108,108,Isle of Man,IM,IMN,833,54.23,-4.55
+109,109,Israel,IL,ISR,376,31.5,34.75
+110,110,Italy,IT,ITA,380,42.8333,12.8333
+111,111,Jamaica,JM,JAM,388,18.25,-77.5
+112,112,Japan,JP,JPN,392,36,138
+113,113,Jersey,JE,JEY,832,49.21,-2.13
+114,114,Jordan,JO,JOR,400,31,36
+115,115,Kazakhstan,KZ,KAZ,398,48,68
+116,116,Kenya,KE,KEN,404,1,38
+117,117,Kiribati,KI,KIR,296,1.4167,173
+118,118,"Korea, Democratic People's Republic of",KP,PRK,408,40,127
+119,119,"Korea, Republic of",KR,KOR,410,37,127.5
+120,120,South Korea,KR,KOR,410,37,127.5
+121,121,Kuwait,KW,KWT,414,29.3375,47.6581
+122,122,Kyrgyzstan,KG,KGZ,417,41,75
+123,123,Lao People's Democratic Republic,LA,LAO,418,18,105
+124,124,Latvia,LV,LVA,428,57,25
+125,125,Lebanon,LB,LBN,422,33.8333,35.8333
+126,126,Lesotho,LS,LSO,426,-29.5,28.5
+127,127,Liberia,LR,LBR,430,6.5,-9.5
+128,128,Libyan Arab Jamahiriya,LY,LBY,434,25,17
+129,129,Libya,LY,LBY,434,25,17
+130,130,Liechtenstein,LI,LIE,438,47.1667,9.5333
+131,131,Lithuania,LT,LTU,440,56,24
+132,132,Luxembourg,LU,LUX,442,49.75,6.1667
+133,133,Macao,MO,MAC,446,22.1667,113.55
+134,134,"Macedonia, the former Yugoslav Republic of",MK,MKD,807,41.8333,22
+135,135,Madagascar,MG,MDG,450,-20,47
+136,136,Malawi,MW,MWI,454,-13.5,34
+137,137,Malaysia,MY,MYS,458,2.5,112.5
+138,138,Maldives,MV,MDV,462,3.25,73
+139,139,Mali,ML,MLI,466,17,-4
+140,140,Malta,MT,MLT,470,35.8333,14.5833
+141,141,Marshall Islands,MH,MHL,584,9,168
+142,142,Martinique,MQ,MTQ,474,14.6667,-61
+143,143,Mauritania,MR,MRT,478,20,-12
+144,144,Mauritius,MU,MUS,480,-20.2833,57.55
+145,145,Mayotte,YT,MYT,175,-12.8333,45.1667
+146,146,Mexico,MX,MEX,484,23,-102
+147,147,"Micronesia, Federated States of",FM,FSM,583,6.9167,158.25
+148,148,"Moldova, Republic of",MD,MDA,498,47,29
+149,149,Monaco,MC,MCO,492,43.7333,7.4
+150,150,Mongolia,MN,MNG,496,46,105
+151,151,Montenegro,ME,MNE,499,42,19
+152,152,Montserrat,MS,MSR,500,16.75,-62.2
+153,153,Morocco,MA,MAR,504,32,-5
+154,154,Mozambique,MZ,MOZ,508,-18.25,35
+155,155,Myanmar,MM,MMR,104,22,98
+156,156,Burma,MM,MMR,104,22,98
+157,157,Namibia,NA,NAM,516,-22,17
+158,158,Nauru,NR,NRU,520,-0.5333,166.9167
+159,159,Nepal,NP,NPL,524,28,84
+160,160,Netherlands,NL,NLD,528,52.5,5.75
+161,161,Netherlands Antilles,AN,ANT,530,12.25,-68.75
+162,162,New Caledonia,NC,NCL,540,-21.5,165.5
+163,163,New Zealand,NZ,NZL,554,-41,174
+164,164,Nicaragua,NI,NIC,558,13,-85
+165,165,Niger,NE,NER,562,16,8
+166,166,Nigeria,NG,NGA,566,10,8
+167,167,Niue,NU,NIU,570,-19.0333,-169.8667
+168,168,Norfolk Island,NF,NFK,574,-29.0333,167.95
+169,169,Northern Mariana Islands,MP,MNP,580,15.2,145.75
+170,170,Norway,NO,NOR,578,62,10
+171,171,Oman,OM,OMN,512,21,57
+172,172,Pakistan,PK,PAK,586,30,70
+173,173,Palau,PW,PLW,585,7.5,134.5
+174,174,"Palestinian Territory, Occupied",PS,PSE,275,32,35.25
+175,175,Panama,PA,PAN,591,9,-80
+176,176,Papua New Guinea,PG,PNG,598,-6,147
+177,177,Paraguay,PY,PRY,600,-23,-58
+178,178,Peru,PE,PER,604,-10,-76
+179,179,Philippines,PH,PHL,608,13,122
+180,180,Pitcairn,PN,PCN,612,-24.7,-127.4
+181,181,Poland,PL,POL,616,52,20
+182,182,Portugal,PT,PRT,620,39.5,-8
+183,183,Puerto Rico,PR,PRI,630,18.25,-66.5
+184,184,Qatar,QA,QAT,634,25.5,51.25
+185,185,Réunion,RE,REU,638,-21.1,55.6
+186,186,Romania,RO,ROU,642,46,25
+187,187,Russian Federation,RU,RUS,643,60,100
+188,188,Russia,RU,RUS,643,60,100
+189,189,Rwanda,RW,RWA,646,-2,30
+190,190,"Saint Helena, Ascension and Tristan da Cunha",SH,SHN,654,-15.9333,-5.7
+191,191,Saint Kitts and Nevis,KN,KNA,659,17.3333,-62.75
+192,192,Saint Lucia,LC,LCA,662,13.8833,-61.1333
+193,193,Saint Pierre and Miquelon,PM,SPM,666,46.8333,-56.3333
+194,194,Saint Vincent and the Grenadines,VC,VCT,670,13.25,-61.2
+195,195,Saint Vincent & the Grenadines,VC,VCT,670,13.25,-61.2
+196,196,St. Vincent and the Grenadines,VC,VCT,670,13.25,-61.2
+197,197,Samoa,WS,WSM,882,-13.5833,-172.3333
+198,198,San Marino,SM,SMR,674,43.7667,12.4167
+199,199,Sao Tome and Principe,ST,STP,678,1,7
+200,200,Saudi Arabia,SA,SAU,682,25,45
+201,201,Senegal,SN,SEN,686,14,-14
+202,202,Serbia,RS,SRB,688,44,21
+203,203,Seychelles,SC,SYC,690,-4.5833,55.6667
+204,204,Sierra Leone,SL,SLE,694,8.5,-11.5
+205,205,Singapore,SG,SGP,702,1.3667,103.8
+206,206,Slovakia,SK,SVK,703,48.6667,19.5
+207,207,Slovenia,SI,SVN,705,46,15
+208,208,Solomon Islands,SB,SLB,90,-8,159
+209,209,Somalia,SO,SOM,706,10,49
+210,210,South Africa,ZA,ZAF,710,-29,24
+211,211,South Georgia and the South Sandwich Islands,GS,SGS,239,-54.5,-37
+212,212,South Sudan,SS,SSD,728,8,30
+213,213,Spain,ES,ESP,724,40,-4
+214,214,Sri Lanka,LK,LKA,144,7,81
+215,215,Sudan,SD,SDN,736,15,30
+216,216,Suriname,SR,SUR,740,4,-56
+217,217,Svalbard and Jan Mayen,SJ,SJM,744,78,20
+218,218,Swaziland,SZ,SWZ,748,-26.5,31.5
+219,219,Sweden,SE,SWE,752,62,15
+220,220,Switzerland,CH,CHE,756,47,8
+221,221,Syrian Arab Republic,SY,SYR,760,35,38
+222,222,"Taiwan, Province of China",TW,TWN,158,23.5,121
+223,223,Taiwan,TW,TWN,158,23.5,121
+224,224,Tajikistan,TJ,TJK,762,39,71
+225,225,"Tanzania, United Republic of",TZ,TZA,834,-6,35
+226,226,Thailand,TH,THA,764,15,100
+227,227,Timor-Leste,TL,TLS,626,-8.55,125.5167
+228,228,Togo,TG,TGO,768,8,1.1667
+229,229,Tokelau,TK,TKL,772,-9,-172
+230,230,Tonga,TO,TON,776,-20,-175
+231,231,Trinidad and Tobago,TT,TTO,780,11,-61
+232,232,Tunisia,TN,TUN,788,34,9
+233,233,Turkey,TR,TUR,792,39,35
+234,234,Turkmenistan,TM,TKM,795,40,60
+235,235,Turks and Caicos Islands,TC,TCA,796,21.75,-71.5833
+236,236,Tuvalu,TV,TUV,798,-8,178
+237,237,Uganda,UG,UGA,800,1,32
+238,238,Ukraine,UA,UKR,804,49,32
+239,239,United Arab Emirates,AE,ARE,784,24,54
+240,240,United Kingdom,GB,GBR,826,54,-2
+241,241,United States,US,USA,840,38,-97
+242,242,United States Minor Outlying Islands,UM,UMI,581,19.2833,166.6
+243,243,Uruguay,UY,URY,858,-33,-56
+244,244,Uzbekistan,UZ,UZB,860,41,64
+245,245,Vanuatu,VU,VUT,548,-16,167
+246,246,"Venezuela, Bolivarian Republic of",VE,VEN,862,8,-66
+247,247,Venezuela,VE,VEN,862,8,-66
+248,248,Viet Nam,VN,VNM,704,16,106
+249,249,Vietnam,VN,VNM,704,16,106
+250,250,"Virgin Islands, British",VG,VGB,92,18.5,-64.5
+251,251,"Virgin Islands, U.S.",VI,VIR,850,18.3333,-64.8333
+252,252,Wallis and Futuna,WF,WLF,876,-13.3,-176.2
+253,253,Western Sahara,EH,ESH,732,24.5,-13
+254,254,Yemen,YE,YEM,887,15,48
+255,255,Zambia,ZM,ZMB,894,-15,30
+256,256,Zimbabwe,ZW,ZWE,716,-20,30

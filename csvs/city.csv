@@ -1,0 +1,275 @@
+index,name,population
+1,Abilene,115930
+2,Akron,217074
+3,Albany,93994
+4,Albuquerque,448607
+5,Alexandria,128283
+6,Allentown,106632
+7,Amarillo,173627
+8,Anaheim,328014
+9,Anchorage,260283
+10,Ann Arbor,114024
+11,Arden-Arcade,92040
+12,Arlington,332969
+13,Arlington,174838
+14,Arvada,102153
+15,Athens-Clarke County,101489
+16,Atlanta,416474
+17,Augusta-Richmond County,199775
+18,Aurora,276393
+19,Aurora,142990
+20,Austin,656562
+21,Bakersfield,247057
+22,Baltimore,651154
+23,Baton Rouge,227818
+24,Beaumont,113866
+25,Bellevue,109569
+26,Berkeley,102743
+27,Billings,92988
+28,Birmingham,242820
+29,Boise City,185787
+30,Boston,589141
+31,Boulder,91238
+32,Bridgeport,139529
+33,Brockton,93653
+34,Brownsville,139722
+35,Buffalo,292648
+36,Burbank,100316
+37,Cambridge,101355
+38,Cape Coral,102286
+39,Carrollton,109576
+40,Carson,89089
+41,Cary,91213
+42,Cedar Rapids,120758
+43,Chandler,176581
+44,Charleston,89063
+45,Charlotte,540828
+46,Chattanooga,155554
+47,Chesapeake,199184
+48,Chicago,2896016
+49,Chula Vista,173556
+50,Cincinnati,331285
+51,Citrus Heights,103455
+52,Clarksville,108787
+53,Clearwater,99936
+54,Cleveland,478403
+55,Colorado Springs,360890
+56,Columbia,116278
+57,Columbus,711470
+58,Columbus,186291
+59,Compton,92864
+60,Concord,121780
+61,Coral Springs,117549
+62,Corona,124966
+63,Corpus Christi,277454
+64,Costa Mesa,108724
+65,Dallas,1188580
+66,Daly City,103621
+67,Davenport,98256
+68,Dayton,166179
+69,Denver,554636
+70,Des Moines,198682
+71,Detroit,951270
+72,Downey,107323
+73,Durham,187035
+74,East Los Angeles,126379
+75,El Cajon,94578
+76,El Monte,115965
+77,El Paso,563662
+78,Elgin,89408
+79,Elizabeth,120568
+80,Erie,103717
+81,Escondido,133559
+82,Eugene,137893
+83,Evansville,121582
+84,Fairfield,92256
+85,Fall River,90555
+86,Fayetteville,121015
+87,Flint,124943
+88,Fontana,128929
+89,Fort Collins,118652
+90,Fort Lauderdale,152397
+91,Fort Wayne,205727
+92,Fort Worth,534694
+93,Fremont,203413
+94,Fresno,427652
+95,Fullerton,126003
+96,Gainesville,92291
+97,Garden Grove,165196
+98,Garland,215768
+99,Gary,102746
+100,Gilbert,109697
+101,Glendale,218812
+102,Glendale,194973
+103,Grand Prairie,127427
+104,Grand Rapids,197800
+105,Green Bay,102313
+106,Greensboro,223891
+107,Hampton,146437
+108,Hartford,121578
+109,Hayward,140030
+110,Henderson,175381
+111,Hialeah,226419
+112,Hollywood,139357
+113,Honolulu,371657
+114,Houston,1953631
+115,Huntington Beach,189594
+116,Huntsville,158216
+117,Independence,113288
+118,Indianapolis,791926
+119,Inglewood,112580
+120,Irvine,143072
+121,Irving,191615
+122,Jackson,184256
+123,Jacksonville,735167
+124,Jersey City,240055
+125,Joliet,106221
+126,Kansas City,441545
+127,Kansas City,146866
+128,Kenosha,89447
+129,Knoxville,173890
+130,Lafayette,110257
+131,Lakewood,144126
+132,Lancaster,118718
+133,Lansing,119128
+134,Laredo,176576
+135,Las Vegas,478434
+136,Lexington-Fayette,260512
+137,Lincoln,225581
+138,Little Rock,183133
+139,Livonia,100545
+140,Long Beach,461522
+141,Los Angeles,3694820
+142,Louisville,256231
+143,Lowell,105167
+144,Lubbock,199564
+145,Macon,113336
+146,Madison,208054
+147,Manchester,107006
+148,McAllen,106414
+149,Memphis,650100
+150,Mesa,396375
+151,Mesquite,124523
+152,Metairie,149428
+153,Miami,362470
+154,Miami Beach,97855
+155,Midland,98293
+156,Milwaukee,596974
+157,Minneapolis,382618
+158,Mission Viejo,98049
+159,Mobile,198915
+160,Modesto,188856
+161,Montgomery,201568
+162,Moreno Valley,142381
+163,Naperville,128358
+164,Nashville-Davidson,569891
+165,New Bedford,94780
+166,New Haven,123626
+167,New Orleans,484674
+168,New York,8008278
+169,Newark,273546
+170,Newport News,180150
+171,Norfolk,234403
+172,Norman,94193
+173,North Las Vegas,115488
+174,Norwalk,103298
+175,Oakland,399484
+176,Oceanside,161029
+177,Odessa,89293
+178,Oklahoma City,506132
+179,Omaha,390007
+180,Ontario,158007
+181,Orange,128821
+182,Orlando,185951
+183,Overland Park,149080
+184,Oxnard,170358
+185,Palmdale,116670
+186,Paradise,124682
+187,Pasadena,141674
+188,Pasadena,133936
+189,Paterson,149222
+190,Pembroke Pines,137427
+191,Peoria,112936
+192,Peoria,108364
+193,Philadelphia,1517550
+194,Phoenix,1321045
+195,Pittsburgh,334563
+196,Plano,222030
+197,Pomona,149473
+198,Portland,529121
+199,Portsmouth,100565
+200,Providence,173618
+201,Provo,105166
+202,Pueblo,102121
+203,Raleigh,276093
+204,Rancho Cucamonga,127743
+205,Reno,180480
+206,Richmond,197790
+207,Richmond,94100
+208,Riverside,255166
+209,Roanoke,93357
+210,Rochester,219773
+211,Rockford,150115
+212,Sacramento,407018
+213,Saint Louis,348189
+214,Saint Paul,287151
+215,Saint Petersburg,248232
+216,Salem,136924
+217,Salinas,151060
+218,Salt Lake City,181743
+219,San Antonio,1144646
+220,San Bernardino,185401
+221,San Buenaventura,100916
+222,San Diego,1223400
+223,San Francisco,776733
+224,San Jose,894943
+225,San Mateo,91799
+226,Sandy,101853
+227,Santa Ana,337977
+228,Santa Clara,102361
+229,Santa Clarita,151088
+230,Santa Monica,91084
+231,Santa Rosa,147595
+232,Savannah,131510
+233,Scottsdale,202705
+234,Seattle,563374
+235,Shreveport,200145
+236,Simi Valley,111351
+237,Sioux Falls,123975
+238,South Bend,107789
+239,Spokane,195629
+240,Springfield,152082
+241,Springfield,151580
+242,Springfield,111454
+243,Stamford,117083
+244,Sterling Heights,124471
+245,Stockton,243771
+246,Sunnyvale,131760
+247,Sunrise Manor,95362
+248,Syracuse,147306
+249,Tacoma,193556
+250,Tallahassee,150624
+251,Tampa,303447
+252,Tempe,158625
+253,Thousand Oaks,117005
+254,Toledo,313619
+255,Topeka,122377
+256,Torrance,137946
+257,Tucson,486699
+258,Tulsa,393049
+259,Vallejo,116760
+260,Vancouver,143560
+261,Virginia Beach,425257
+262,Visalia,91762
+263,Waco,113726
+264,Warren,138247
+265,Washington,572059
+266,Waterbury,107271
+267,West Covina,105080
+268,West Valley City,108896
+269,Westminster,100940
+270,Wichita,344284
+271,Wichita Falls,104197
+272,Winston-Salem,185776
+273,Worcester,172648
+274,Yonkers,196086

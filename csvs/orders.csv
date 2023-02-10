@@ -1,0 +1,6 @@
+id,product_category,payment_method,shipping_cost,unit_price
+1,text books,credit card,10,50
+2,posters,cash,5,16
+3,pamphlets,credit card,1,8
+4,novels,cash,10,44
+5,ipads,credit card,15,100
