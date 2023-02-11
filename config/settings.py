@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blackDB",
+    "whitenoise.runserver_nostatic", #heroku static files
 ]
 
 MIDDLEWARE = [
@@ -89,11 +90,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': env.str("DB_ENGINE"),
         'NAME': env.str("DB_NAME"), 
         'USER': env.str("DB_USER"), 
         'PASSWORD': env.str("DB_PASS"),
-        'HOST': '127.0.0.1', 
+        'HOST': env.str("DB_HOST"), 
         'PORT': '5432',
     }
 }
@@ -135,6 +136,10 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+#Heroku requirements for static files
+STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) # new
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

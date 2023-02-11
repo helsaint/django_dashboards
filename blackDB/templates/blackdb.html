@@ -14,7 +14,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
     <!-- Black Dashboard CSS -->
-    <link href="{% static 'blackDB/css/black-dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'blackDB/css/black-dashboard.css' %}?{% now 'U' %}" rel="stylesheet">
     <link href="{% static 'blackDB/css/cards-small.css' %}?{% now 'U' %}" rel="stylesheet">
     <link href="{% static 'blackDB/css/row-column.css' %}?{% now 'U' %}" rel="stylesheet">
     <!--CSS for Map-->
@@ -133,6 +133,7 @@
               </div>
             </div>
         </div>
+        
         <div class="card">
             <div class="container">
                 <div>
@@ -144,6 +145,7 @@
                 </p> 
             </div>
         </div>
+
         <div class="card">
           <div class="container">
               <div id="mapEmissionsCapita" style="height: 400px;">
@@ -230,6 +232,7 @@
     const ctx = document.getElementById('popBarChart');
     new Chart(ctx, {
       type: 'bar',
+      responsive: true,
       data: {
         //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         labels : arr_keys,
