@@ -343,6 +343,10 @@ h5, .h5 {
 h6, .h6 {
   font-size: 0.75rem; }
 
+.responsive-canvas{
+  width: 100%;
+}
+
 .lead {
   font-size: 0.78125rem;
   font-weight: 300; }
