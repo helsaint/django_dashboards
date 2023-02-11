@@ -239,7 +239,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  -webkit-appearance: button;
+  appearance:auto; }
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -263,7 +264,8 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  -webkit-appearance: listbox; }
+  -webkit-appearance: listbox;
+  appearance: auto; }
 
 textarea {
   overflow: auto;
@@ -295,7 +297,8 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none; }
+  -webkit-appearance: none; 
+  appearance: auto;}
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -342,6 +345,10 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: 0.75rem; }
+
+.responsive-canvas{
+  width: 100%;
+}
 
 .lead {
   font-size: 0.78125rem;
@@ -9477,7 +9484,6 @@ fieldset[disabled]
     padding: 0; }
   .footer .nav {
     display: inline-block;
-    float: left;
     margin-bottom: 0;
     padding-left: 30px;
     list-style: none; }
@@ -11872,7 +11878,6 @@ table.tablesorter thead tr .headerSortDown {
   padding: 0 5px; }
 
 .color-swatch-header .pass-fail-item {
-  float: left;
   display: inline-block;
   text-align: center;
   padding: 2px; }
@@ -11920,7 +11925,6 @@ table.tablesorter thead tr .headerSortDown {
 
 .table-colors .swatch {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
   margin-right: 20px;
@@ -11936,7 +11940,6 @@ table.tablesorter thead tr .headerSortDown {
   font-weight: 600;
   line-height: 10px;
   display: inline-block;
-  float: left;
   margin: 5px 10px 0 0;
   padding: 2px 4px;
   letter-spacing: .05em;

@@ -10945,16 +10945,16 @@ hr {
   margin-bottom: 30px; }
 
 table.tablesorter thead tr .header {
-  background-image: url("../img/bg.gif");
+  background-image: url("../img/bg.e6a4e02237db.gif");
   background-repeat: no-repeat;
   background-position: center right;
   cursor: pointer; }
 
 table.tablesorter thead tr .headerSortUp {
-  background-image: url("../img/asc.gif"); }
+  background-image: url("../img/asc.75c72e84ea1a.gif"); }
 
 table.tablesorter thead tr .headerSortDown {
-  background-image: url("../img/desc.gif"); }
+  background-image: url("../img/desc.5a382f972d79.gif"); }
 
 .dataTables_wrapper .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05); }
@@ -13360,4 +13360,4 @@ Copyright (c) 2015 Daniel Eden
     padding-left: 0;
     padding-right: 0; }
 
-/*# sourceMappingURL=black-dashboard.css.map */
+/*# sourceMappingURL=black-dashboard.css.c8b35da4c9d8.map */
