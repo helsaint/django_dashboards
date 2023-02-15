@@ -18,11 +18,12 @@ def emissions(request):
     plot_bubble = bubblePlot()
     wfc = waterfallChart()
     top_polluters_bySource = topCO2BySource()
+    pbco2s = plotByCO2Sources()
     return render(request, "emissions.html",{"max_pop":max_pop, "max_co2":max_co2_dict,
     "max_co2_capita": max_co2_per_capita_dict, "max_cum": max_co2_cum,
     "epcd":dumps(emissions_per_capita_dict), "top7":dict_sorted_emissions,
     "plot_bar":plot_bar, "plot_bubble": plot_bubble, "wfc": wfc, 
-    "tpbs":top_polluters_bySource})
+    "tpbs":top_polluters_bySource, 'pbco2s':pbco2s})
 
 # Get Country with max population, return as a dictionary
 def maxPopulation(request):
@@ -349,5 +350,75 @@ def topCO2BySource():
         dict_result[l] = temp_lst
 
     return dict_result
- 
+
+def plotByCO2Sources():
+    filter_list = ['World']
+
+    data_set = Emissions.objects.values('country', 'co2', 'cement_co2', 'coal_co2', 'flaring_co2',
+    'gas_co2', 'oil_co2', 'other_industry_co2', 'year')
+    data_set = data_set.filter(country__in=filter_list)
+    lst_data = ['cement_co2', 'coal_co2', 'flaring_co2','gas_co2', 'oil_co2', 
+                'other_industry_co2', 'year']
+    
+    dict_result = {'cement_co2':[], 'coal_co2':[], 'flaring_co2':[], 'gas_co2': [], 
+                   'oil_co2':[],'other_industry_co2':[], 'year': []}
+    
+    for d in data_set:
+        for l in lst_data:
+            temp_lst = dict_result[l]
+            try:
+                temp_val = float(d[l])
+                temp_lst.append(temp_val)
+                dict_result[l] = temp_lst
+            except:
+                temp_lst.append(0)
+                dict_result[l] = temp_lst
+
+    x = list(dict_result['year'])
+
+    new_layout = go.Layout(
+        margin=go.layout.Margin(
+        l=0, #left margin
+        r=0, #right margin
+        b=0, #bottom margin
+        t=0, #top margin
+        ))
+    
+    fig = go.Figure(layout=new_layout)
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['cement_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(133,138,126)'), stackgroup='one', name="Cement",
+    ))
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['other_industry_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(255,165,0)'), stackgroup='one', name="Other Industry",
+    ))
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['flaring_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(232,121,59)'), stackgroup='one', name="Flaring"
+    ))
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['gas_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(94,186,201)'), stackgroup='one', name="Gas"
+    ))
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['oil_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(16,41,0)'), stackgroup='one', name="Oil"
+    ))
+    fig.add_trace(go.Scatter(
+        x = x, y = dict_result['coal_co2'], hoverinfo='x+y', mode='lines',
+        line= dict(width=0.5, color='rgb(0,0,0)'), stackgroup='one', name="Coal"
+    ))
+
+    
+    fig.update_layout(
+        xaxis_title="Year",
+        yaxis_title="CO2 Emissions"
+    )
+
+    plt_div = plot(fig, output_type='div', include_plotlyjs=False)
+    return plt_div
+
+
+
 # Create your views here.

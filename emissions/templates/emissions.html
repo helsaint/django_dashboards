@@ -186,7 +186,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-  
+  <hr>
+  <div class="w3-panel">
+    <h5>Plot showing contribution of sources to emissions in stacked graph (2020)</h5>
+    {% autoescape off %}
+    {{ pbco2s }}
+    {% endautoescape %}
+  </div>
   <hr>
   <br>
   <div class="w3-container w3-dark-grey w3-padding-32">
