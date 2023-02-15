@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic", #heroku static files
     "django.contrib.staticfiles",
     "blackDB", 
+    "emissions",
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [
@@ -90,20 +92,20 @@ WSGI_APPLICATION = "config.wsgi.application"
 #}
 
 #use when locally
-#DATABASES = {
-#    'default':{
-#        'ENGINE': env.str("DB_ENGINE"),
-#        'NAME': env.str("DB_NAME"), 
-#        'USER': env.str("DB_USER"), 
-#        'PASSWORD': env.str("DB_PASS"),
-#        'HOST': env.str("DB_HOST"), 
-#        'PORT': '5432',
-#    }
-#}
-
 DATABASES = {
-    'default': env.dj_db_url("DATABASE_URL")
+    'default':{
+        'ENGINE': env.str("DB_ENGINE"),
+        'NAME': env.str("DB_NAME"), 
+        'USER': env.str("DB_USER"), 
+        'PASSWORD': env.str("DB_PASS"),
+        'HOST': env.str("DB_HOST"), 
+        'PORT': '5432',
+    }
 }
+
+#DATABASES = {
+#    'default': env.dj_db_url("DATABASE_URL")
+#}
 
 
 # Password validation

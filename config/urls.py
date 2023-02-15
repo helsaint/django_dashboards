@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('emissions/', include('emissions.urls')),
     path('', include('blackDB.urls')),
 ]
