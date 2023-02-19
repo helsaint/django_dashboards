@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from .models import Emissions, Countries
+from .models import Emissions, Countries, Regions
 from django.http import JsonResponse
 from json import dumps
 from plotly.offline import plot
 import plotly.graph_objs as go
-from django.db.models import Max, Sum
+import plotly.express as px
+import pandas as pd
 
 def emissions(request):
     max_pop = maxPopulation(request)
@@ -19,11 +20,12 @@ def emissions(request):
     wfc = waterfallChart()
     top_polluters_bySource = topCO2BySource()
     pbco2s = plotByCO2Sources()
+    animated_bubble = animatedBubble()
     return render(request, "emissions.html",{"max_pop":max_pop, "max_co2":max_co2_dict,
     "max_co2_capita": max_co2_per_capita_dict, "max_cum": max_co2_cum,
     "epcd":dumps(emissions_per_capita_dict), "top7":dict_sorted_emissions,
     "plot_bar":plot_bar, "plot_bubble": plot_bubble, "wfc": wfc, 
-    "tpbs":top_polluters_bySource, 'pbco2s':pbco2s})
+    "tpbs":top_polluters_bySource, 'pbco2s':pbco2s, 'animbubble': animated_bubble})
 
 # Get Country with max population, return as a dictionary
 def maxPopulation(request):
@@ -419,6 +421,57 @@ def plotByCO2Sources():
     plt_div = plot(fig, output_type='div', include_plotlyjs=False)
     return plt_div
 
+def animatedBubble():
+    filter_list = ['High-income countries', 'Low-income countries',
+    'Lower-middle-income countries', 'Upper-middle-income countries', 'World',
+    'Asia', 'Africa', 'Europe', 'North America', 'South America', 'European Union (27)', 
+    'Oceania', 'European Union (28)', 'Asia (excl. China & India)', 'Europe (excl. EU-27)',
+    'Europe (excl. EU-28)', 'International transport','Kuwaiti Oil Fires', 'Panama Canal Zone',
+    'North America (excl. USA)']
 
+    data_set_regions = Regions.objects.values('country', 'continent', 'sub_region')
+    data_set_emissions = Emissions.objects.values('country', 'year', 'population', 'gdp', 'co2')
+    data_set_emissions = data_set_emissions.exclude(country__in=filter_list)
+    dict_subregion = {}
+    set_sub_region = set()
+    dict_continent = {}
+    lst_columns = ['population', 'gdp', 'co2']
+    dict_emissions = {'year': [], 'country': [], 'population': [], 'gdp':[], 'co2':[],
+                      'continent':[], 'sub_region':[]}
+    
+    for d in data_set_regions:
+        dict_continent[d['country']] = d['continent']
+        dict_subregion[d['country']] = d['sub_region']
+
+    for d in data_set_emissions:
+        temp_lst = dict_emissions['year']
+        temp_lst.append(int(d['year']))
+        dict_emissions['year'] = temp_lst
+        temp_lst = dict_emissions['country']
+        temp_lst.append(d['country'])
+        temp_lst = dict_emissions['continent']
+        temp_lst.append(dict_continent[d['country']])
+        dict_emissions['continent'] = temp_lst
+        temp_lst = dict_emissions['sub_region']
+        temp_lst.append(dict_subregion[d['country']])
+        dict_emissions['sub_region'] = temp_lst
+
+        for l in lst_columns:
+            temp_lst = dict_emissions[l]
+            try:
+                floatTemp = float(d[l])
+                temp_lst.append(floatTemp)
+            except:
+                temp_lst.append(0.)
+            dict_emissions[l] = temp_lst
+    df = pd.DataFrame(dict_emissions)
+
+    df = df[(df['year']>1970) & (df['year']< 2018)]
+
+    fig = px.scatter(df, x='gdp',y='population', animation_frame='year', animation_group='country',
+               size = 'co2', color='continent', hover_name='country')
+    
+    plt_div = plot(fig, output_type='div', include_plotlyjs=False)
+    return plt_div
 
 # Create your views here.

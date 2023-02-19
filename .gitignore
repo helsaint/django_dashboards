@@ -2,4 +2,6 @@ db.sqlite3
 .env
 blackDB_countries.sql
 blackDB_emissions.sql
+countries_regions.sql
+requirements1.txt
 __pycache__/

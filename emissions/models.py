@@ -1,5 +1,14 @@
 from django.db import models
 
+class Regions(models.Model):
+    country = models.TextField(blank=True, null=True)
+    continent = models.TextField(blank=True, null=True)
+    sub_region = models.TextField(blank=True,null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'countries_region'
+
 class Countries(models.Model):
     index = models.TextField(blank=True, null=True)
     country = models.TextField(blank=True, null=True)
