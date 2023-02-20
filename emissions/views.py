@@ -429,47 +429,26 @@ def animatedBubble():
     'Europe (excl. EU-28)', 'International transport','Kuwaiti Oil Fires', 'Panama Canal Zone',
     'North America (excl. USA)']
 
-    data_set_regions = Regions.objects.values('country', 'continent', 'sub_region')
-    data_set_emissions = Emissions.objects.values('country', 'year', 'population', 'gdp', 'co2')
+    data_set_regions = Regions.objects.values_list('country', 'continent', 'sub_region')
+    data_set_emissions = Emissions.objects.values_list('country', 'year', 'population', 'gdp', 'co2')
     data_set_emissions = data_set_emissions.exclude(country__in=filter_list)
-    dict_subregion = {}
-    set_sub_region = set()
-    dict_continent = {}
-    lst_columns = ['population', 'gdp', 'co2']
-    dict_emissions = {'year': [], 'country': [], 'population': [], 'gdp':[], 'co2':[],
-                      'continent':[], 'sub_region':[]}
-    
-    for d in data_set_regions:
-        dict_continent[d['country']] = d['continent']
-        dict_subregion[d['country']] = d['sub_region']
 
-    for d in data_set_emissions:
-        temp_lst = dict_emissions['year']
-        temp_lst.append(int(d['year']))
-        dict_emissions['year'] = temp_lst
-        temp_lst = dict_emissions['country']
-        temp_lst.append(d['country'])
-        temp_lst = dict_emissions['continent']
-        temp_lst.append(dict_continent[d['country']])
-        dict_emissions['continent'] = temp_lst
-        temp_lst = dict_emissions['sub_region']
-        temp_lst.append(dict_subregion[d['country']])
-        dict_emissions['sub_region'] = temp_lst
+    df_regions = pd.DataFrame(list(data_set_regions), 
+                              columns=['country', 'continent', 'sub_region'])
+    df_emissions = pd.DataFrame(list(data_set_emissions),
+                                columns=['country', 'year', 'population', 'gdp', 'co2'])
 
-        for l in lst_columns:
-            temp_lst = dict_emissions[l]
-            try:
-                floatTemp = float(d[l])
-                temp_lst.append(floatTemp)
-            except:
-                temp_lst.append(0.)
-            dict_emissions[l] = temp_lst
-    df = pd.DataFrame(dict_emissions)
+    df_emissions = df_emissions.fillna(0)
+    df_emissions = df_emissions.astype({'population':int, 'gdp':float, 'co2':float, 'year':int})
+    df_emissions['gdp'] = df_emissions['gdp'].round(2)
+    df_emissions['co2'] = df_emissions['co2'].round(2)
+    df_emissions = df_emissions[(df_emissions['year']>1969) & (df_emissions['year'] < 2019)]
+    df_emissions = pd.merge(df_emissions, df_regions, left_on='country', 
+                            right_on='country', how='left')
 
-    df = df[(df['year']>1970) & (df['year']< 2018)]
-
-    fig = px.scatter(df, x='gdp',y='population', animation_frame='year', animation_group='country',
-               size = 'co2', color='continent', hover_name='country')
+    fig = px.scatter(df_emissions, x='gdp',y='population', animation_frame='year', 
+                     animation_group='country', size = 'co2', color='continent', 
+                     hover_name='country')
     
     plt_div = plot(fig, output_type='div', include_plotlyjs=False)
     return plt_div
