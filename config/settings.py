@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blackDB", 
     "emissions",
+    "pl_api",
     "django.contrib.humanize",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 ROOT_URLCONF = "config.urls"
 
