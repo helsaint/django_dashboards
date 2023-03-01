@@ -49,11 +49,13 @@ INSTALLED_APPS = [
     "pl_api",
     "django.contrib.humanize",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware", # To connect to React
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -61,6 +63,15 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
