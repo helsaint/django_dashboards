@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "blackDB", 
     "emissions",
     "pl_api",
+    "pl_results_api",
     "django.contrib.humanize",
     "rest_framework",
     "corsheaders",

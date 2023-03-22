@@ -20,5 +20,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('emissions/', include('emissions.urls')),
     path('pl_api/', include('pl_api.urls')),
+    path('pl_results_api/', include('pl_results_api.urls')),
     path('', include('blackDB.urls')),
 ]
