@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "emissions",
     "pl_api",
     "pl_results_api",
+    "web_scrape_api",
     "django.contrib.humanize",
     "rest_framework",
     "corsheaders",
