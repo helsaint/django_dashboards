@@ -31,7 +31,17 @@ def web_scrape_api(request):
         for p in players_value:
             player_valuation.append(p.text)
 
-        dict_result = dict(zip(player_name,zip(player_img,player_valuation)))
+        temp_data = table.find_all('td', {'class': 'zentriert'})
+        int_count = 0
+        player_age = []
+        for t in temp_data:
+            str_age = t.text
+            if(str_age != ''):
+                if(int_count%2 == 1):
+                    player_age.append(str_age)
+                int_count = int_count + 1
+                
+        dict_result = dict(zip(player_name,zip(player_img,player_valuation,player_age)))
         return JsonResponse(dict_result, safe=False)
     except:
         return render(request, "web_scrape_api.html", {})
