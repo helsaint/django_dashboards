@@ -25,11 +25,13 @@ def web_scrape_api(request):
             player_img.append(p['data-src'])
             player_name.append(p['title'])
 
-        ## Get valuation of players from first page
+        ## Get valuation and transfrmmarket link for players from first page 
         players_value = table.find_all('td', {'class': 'rechts hauptlink'})
         player_valuation = []
+        player_link = []
         for p in players_value:
             player_valuation.append(p.text)
+            player_link.append('https://www.transfermarkt.com' + p.find('a', href=True)['href'])
 
         temp_data = table.find_all('td', {'class': 'zentriert'})
         int_count = 0
@@ -44,5 +46,5 @@ def web_scrape_api(request):
         dict_result = dict(zip(player_name,zip(player_img,player_valuation,player_age)))
         return JsonResponse(dict_result, safe=False)
     except:
-        return render(request, "web_scrape_api.html", {})
+        return JsonResponse({'Error':'error'})
 # Create your views here.
