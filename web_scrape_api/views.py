@@ -43,7 +43,7 @@ def web_scrape_api(request):
                     player_age.append(str_age)
                 int_count = int_count + 1
                 
-        dict_result = dict(zip(player_name,zip(player_img,player_valuation,player_age)))
+        dict_result = dict(zip(player_name,zip(player_img,player_valuation,player_age, player_link)))
         return JsonResponse(dict_result, safe=False)
     except:
         return JsonResponse({'Error':'error'})
