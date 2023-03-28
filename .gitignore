@@ -3,6 +3,7 @@ db.sqlite3
 blackDB_countries.sql
 blackDB_emissions.sql
 countries_region.sql
+premier_league.sql
 requirements1.txt
 requirements2.txt
 requirements3.txt
