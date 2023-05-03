@@ -22,5 +22,6 @@ urlpatterns = [
     path('pl_api/', include('pl_api.urls')),
     path('pl_results_api/', include('pl_results_api.urls')),
     path('web_scrape_api/', include('web_scrape_api.urls')),
+    path('sofifa_api/', include('sofifa_api.urls')),
     path('', include('blackDB.urls')),
 ]
