@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "pl_api",
     "pl_results_api",
     "web_scrape_api",
+    "sofifa_api",
     "django.contrib.humanize",
     "rest_framework",
     "corsheaders",
