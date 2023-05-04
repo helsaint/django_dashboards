@@ -76,7 +76,10 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:5173',
     'http://localhost:4173',
     'http://127.0.0.1:4173',
+    'http://localhost:4200',
+    'http://127.0.0.1:4200',
     'https://tailwind-nodejs.herokuapp.com',
+    'https://monster-angular.herokuapp.com',
 )
 
 REST_FRAMEWORK = {
