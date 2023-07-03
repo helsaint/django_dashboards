@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from django.http import JsonResponse, HttpResponse
 import pandas as pd
 from plotly.offline import plot
+import datetime
 import plotly.express as px
 
 def sofifa_general_api_default(request):
@@ -99,6 +100,49 @@ def player_detail(request, name):
         temp_dict['value'] = str(value)
         data_final.append(temp_dict)
     return render(request, 'player_info.html', {'player_data': data_final})
+
+def country_detail(request, name):
+    df_cc = pd.read_csv('./csvs/country_code.csv')
+    country = [df_cc[df_cc['code'] == name]['name'].iloc[0]]
+    today = datetime.date.today()
+    year = today.year
+
+    if (country[0] == 'United Kingdom'):
+        country = ['England', 'Scotland', 'Wales', 'Northern Ireland']
+    data_final = []
+    for c in country:
+        country_data = Sofifa.objects.filter(nationality_name=c, 
+                                             club_contract_valid_until_year__gte=year).values(
+                                                                        'short_name',
+                                                                        'long_name', 'age',
+                                                                        'value_eur', 'wage_eur', 
+                                                                        'club_name', 'league_name', 
+                                                                        'league_level',
+                                                                        'overall','player_traits',
+                                                                        'club_contract_valid_until_year')
+        data_final.extend(list(country_data))
+    for d in data_final:
+        if (d['value_eur'] is None):
+            d['value_eur'] = '0.00'
+        if (',' in d['value_eur']):
+            d['value_eur'] = d['value_eur'].replace(',', '')
+        d['value_eur'] = d['value_eur'].replace('$', '')
+        d['value_eur'] = float(d['value_eur'])
+    
+    for d in data_final:
+        if (d['wage_eur'] is None):
+            d['wage_eur'] = '0.00'
+        if (',' in d['wage_eur']):
+            d['wage_eur'] = d['wage_eur'].replace(',', '')
+        d['wage_eur'] = d['wage_eur'].replace('$', '')
+        d['wage_eur'] = float(d['wage_eur'])
+
+    data_final = sorted(data_final, key=lambda x:x['value_eur'], reverse=True)
+    for  d in data_final:
+        d['value_eur'] = '€{:,.2f}'.format(d['value_eur'])
+        d['wage_eur'] = '€{:,.2f}'.format(d['wage_eur'])
+    
+    return render(request, 'country_detail.html', {'country_data': data_final})
 
 
 class GeneralAllView(generics.ListAPIView):
