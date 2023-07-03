@@ -90,6 +90,16 @@ def generalPlayerStats(request):
     
     return JsonResponse(dict_result,safe=False)
 
+def player_detail(request, name):
+    player_data = Sofifa.objects.filter(short_name=name).values()
+    data_final = []
+    for key, value in player_data[0].items():
+        temp_dict = {}
+        temp_dict['feature'] = str(key)
+        temp_dict['value'] = str(value)
+        data_final.append(temp_dict)
+    return render(request, 'player_info.html', {'player_data': data_final})
+
 
 class GeneralAllView(generics.ListAPIView):
     queryset = Sofifa.objects.values('player_id', 'short_name', 'overall', 'age', 'value_eur',

@@ -7,5 +7,6 @@ urlpatterns = [
     path('sofifa_general_stats_api', views.generalPlayerStats, name='sofifa_general_stats_api'),
     path('sofifa_general_api', GeneralAllView.as_view(), name='sofifa_general_api'),
     path('sofifa_bubble_plot_earnings_api', views.bubblePlotEarning, name='sofifa_bubble_plot_earnings_api'),
-    path('sofifa_choropleth_api', views.choroplethData, name='sofifa_choropleth_api')
+    path('sofifa_choropleth_api', views.choroplethData, name='sofifa_choropleth_api'),
+    path('sofifa_player_detail/<str:name>/', views.player_detail, name='sofifa_player_detail')
 ]

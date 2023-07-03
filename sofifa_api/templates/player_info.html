@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.datagridxl.com/datagridxl2.js"></script>
+        <title>Individual Player Data</title>
+    </head>
+
+    <body>
+        <!--The below allows player_data in views to be accessed by javascript.
+            It creates the following code:
+            <script id="some_name" type="application/json">data in list or dictionary</script>
+            JSON.parse() is then used to access the data
+        -->
+        {{ player_data|json_script:'player_data' }}
+        <div class="table-1" id="grid" style="width:100%;height:400px;"></div>
+        <script>
+            /** Below will have columns named Alexei and Monkey and two rows with the 
+             * values in them. Datagridxl
+            var options = {
+			data: [
+				{"Alexei": 100,
+                 "Monkey": 200},
+                {"Alexei": "Ape",
+                 "Monkey": "Donkey"},
+			]
+		    };
+            **/
+
+            const input_data = JSON.parse(document.getElementById('player_data').textContent);
+            console.log(input_data);
+            const options1 = {
+                data: input_data,
+                colWidth: 400
+            }
+		    var grid = new DataGridXL("grid", options1);
+        </script>
+    </body>
+
+    
+   
+
+</html>
