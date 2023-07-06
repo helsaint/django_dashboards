@@ -3,10 +3,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.datagridxl.com/datagridxl2.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
         <title>Individual Player Data</title>
     </head>
 
     <body>
+        <h1>Statistics for: {{ player_name }}</h1>
         <!--The below allows player_data in views to be accessed by javascript.
             It creates the following code:
             <script id="some_name" type="application/json">data in list or dictionary</script>
@@ -14,6 +18,20 @@
         -->
         {{ player_data|json_script:'player_data' }}
         <div class="table-1" id="grid" style="width:100%;height:400px;"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                {% autoescape off%}
+                {{ px_general }}
+                {% endautoescape %}
+            </div>
+            <div class="col-sm-6">
+                {% autoescape off%}
+                {{ px_attacking }}
+                {% endautoescape %}
+            </div>
+            
+        </div>
         <script>
             /** Below will have columns named Alexei and Monkey and two rows with the 
              * values in them. Datagridxl
@@ -36,8 +54,5 @@
 		    var grid = new DataGridXL("grid", options1);
         </script>
     </body>
-
-    
-   
 
 </html>

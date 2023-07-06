@@ -99,8 +99,25 @@ def player_detail(request, name):
         temp_dict['feature'] = str(key)
         temp_dict['value'] = str(value)
         data_final.append(temp_dict)
-    return render(request, 'player_info.html', {'player_data': data_final})
 
+    # Spider Chart takes the queryset data and list of 
+    # features of interest
+    lst_sc_points = ['pace', 'shooting', 'passing', 'dribbling',
+                      'defending', 'physic']
+    px_general = spider_chart(player_data, lst_sc_points, 
+                              title="Spider web of " + name + " general prowess")
+    lst_sc_points = ['attacking_crossing',
+                      'attacking_finishing', 'attacking_heading_accuracy',
+                      'attacking_short_passing', 'attacking_volleys']
+    px_attacking = spider_chart(player_data, lst_sc_points,
+                                title="Spider web of " + name + " attacking prowess")
+    
+    
+    return render(request, 'player_info.html', {'player_data': data_final, 
+                                                'px_general': px_general,
+                                                'px_attacking': px_attacking, 
+                                                'player_name': name})
+    
 def country_detail(request, name):
     df_cc = pd.read_csv('./csvs/country_code.csv')
     country = [df_cc[df_cc['code'] == name]['name'].iloc[0]]
@@ -143,6 +160,33 @@ def country_detail(request, name):
         d['wage_eur'] = '€{:,.2f}'.format(d['wage_eur'])
     
     return render(request, 'country_detail.html', {'country_data': data_final})
+
+#General code to add a plotly plot to html. below uses plotly.express
+    #x_data = [0,1,2,3,4,5]
+    #y_data = [x**2 for x in x_data]
+    #fig = px.scatter(x=x_data, y=y_data)
+    #px_div = plot(fig, output_type='div')
+def spider_chart(dataset, lst_points,title="Spider web data"):
+    temp_dict = dataset[0]
+    theta = lst_points
+    r = [temp_dict.get(k) for k in theta]
+    sort_index = np.argsort(np.array(r))
+    r_sort = [r[i] for i in sort_index]
+    theta_sort = [theta[i] for i in sort_index]
+
+    fig = go.Figure(data=go.Scatterpolar(
+        r=r_sort,
+        theta=theta_sort,
+        fill='toself',
+        marker = dict(color = 'rgb(35, 193, 134)'),
+    ))
+
+    fig.update_layout(
+        polar=dict(radialaxis=dict(visible=True),),
+        showlegend=False,
+        title=title,
+    )
+    return(plot(fig, output_type='div'))
 
 
 class GeneralAllView(generics.ListAPIView):
