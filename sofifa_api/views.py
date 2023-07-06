@@ -178,7 +178,7 @@ def spider_chart(dataset, lst_points,title="Spider web data"):
     # if not we replace the None type value with 0
     for i in range(len(r)):
         try:
-            r[i] = int(r[i])
+            r[i] = float(r[i])
         except:
             r[i] = 0
     sort_index = np.argsort(np.array(r))
