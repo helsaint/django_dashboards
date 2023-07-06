@@ -172,6 +172,15 @@ def spider_chart(dataset, lst_points,title="Spider web data"):
     temp_dict = dataset[0]
     theta = lst_points
     r = [temp_dict.get(k) for k in theta]
+
+    # In some cases, goalkeepers the values are type None,
+    # so we test to make sure a numeric value is there
+    # if not we replace the None type value with 0
+    for i in range(len(r)):
+        try:
+            r[i] = int(r[i])
+        except:
+            r[i] = 0
     sort_index = np.argsort(np.array(r))
     r_sort = [r[i] for i in sort_index]
     theta_sort = [theta[i] for i in sort_index]
