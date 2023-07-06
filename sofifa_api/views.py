@@ -8,6 +8,8 @@ import pandas as pd
 from plotly.offline import plot
 import datetime
 import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
 
 def sofifa_general_api_default(request):
     return render(request, 'sofifa_general_api.html',{})
