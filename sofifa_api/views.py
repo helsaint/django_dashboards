@@ -16,7 +16,13 @@ def sofifa_general_api_default(request):
 
 @api_view(['GET'])
 def choroplethData(request):
-    queryset = Sofifa.objects.values_list('player_id', 'nationality_name')
+
+    #Restricting data to players currently under contract.
+    today = datetime.date.today()
+    year = today.year
+    queryset = Sofifa.objects.filter(club_contract_valid_until_year__gte=year).values('player_id', 
+                                                                                      'nationality_name')
+    
     df = pd.DataFrame(list(queryset), columns=['player_id', 'nationality_name'])
     df_cc = pd.read_csv('./csvs/country_code.csv')
     df1 = pd.pivot_table(df, index='nationality_name',
@@ -25,6 +31,8 @@ def choroplethData(request):
     dict_result = {}
     df1 = df1.reset_index()
     df1['nationality_name'] = df1['nationality_name'].str.strip()
+    # Choropleth map doesn't distinguish between Scotland, England, Wales and NI
+    # instead it calls all United Kingdom
     uk_sum = df1[(df1['nationality_name'] == 'Scotland') | (df1['nationality_name'] == 'England')|
               (df1['nationality_name'] == 'Wales') | 
               (df1['nationality_name'] == 'Northern Ireland')]['player_id'].sum()
@@ -39,7 +47,15 @@ def choroplethData(request):
 
 @api_view(['GET'])
 def bubblePlotEarning(request):
-    queryset = Sofifa.objects.values_list('short_name', 'overall', 'wage_eur', 'value_eur')
+    
+    #Restricting data to players still under contract and not full list
+    today = datetime.date.today()
+    year = today.year
+    queryset = Sofifa.objects.filter(club_contract_valid_until_year__gte=year).values('short_name',
+                                                                                    'overall',
+                                                                                    'wage_eur',
+                                                                                    'value_eur')
+    
     df = pd.DataFrame(list(queryset),
                       columns=['short_name', 'overall', 'wage_eur', 'value_eur'])
     dict_result = {}
